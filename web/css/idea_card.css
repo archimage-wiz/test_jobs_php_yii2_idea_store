@@ -1,0 +1,152 @@
+.card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.idea-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.idea-card .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.idea-card .card-text {
+    flex: 1 1 auto;
+    color: #495057;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.idea-card .card-footer {
+    background: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.idea-card .card-footer small {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #6c757d;
+}
+
+.idea-card .btn {
+    transition: all 0.2s;
+}
+
+.idea-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Стили для страницы просмотра */
+.note-view .card-header {
+    background-color: #e6f2ff;
+    border-bottom: 1px solid #d1e7ff;
+    padding: 15px;
+}
+
+.note-view .card-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.note-metadata {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Стили пагинации */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-item {
+    margin: 0 2px;
+    display: flex;
+}
+
+.page-link {
+    border-radius: 4px;
+    color: #0d6efd;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+    font-family: monospace;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.page-item.next.disabled,
+.page-item.prev.disabled {
+    display: none;
+}
+
+.page-item.disabled:not(.active) .page-link {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #6c757d;
+    pointer-events: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .note-view .card-body .row {
+        flex-direction: column;
+    }
+
+    .note-view .btn-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .note-view .btn-group .btn {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .idea-card .card-body {
+        padding: 1rem;
+    }
+    
+    .idea-card .card-footer {
+        padding: 0.75rem;
+    }
+}
